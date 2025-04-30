@@ -54,7 +54,7 @@ const AboutSection = () => {
                 <p className="text-gray-400">Creating campaigns that command attention and drive genuine engagement.</p>
               </div>
             </div>
-            
+
             <p className="fade-in text-xl text-gray-300 text-center">
               Because in this world, buzz is the prize—and fandom is the fuel.
             </p>
@@ -75,7 +75,7 @@ const AboutSection = () => {
                 and <span className="text-black dark:text-white font-black">earned the trust of names that move millions.</span>
               </p>
             </div>
-  
+
             <p className="fade-in text-lg text-gray-300 text-center">
               We're here for the moments that matter—before they even happen. From grassroots to global screens, we make stories stick and campaigns click.
             </p>
