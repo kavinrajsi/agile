@@ -1,4 +1,4 @@
-import { Instagram, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Instagram, Twitter } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,12 +19,7 @@ const Footer = () => {
             <a href="https://x.com/AgileMadarth/" target="_blank" rel="noopener noreferrer" aria-label="AgileMadarth Twitter" className="text-gray-400 hover:text-primary transition-colors">
               <Twitter />
             </a>
-            <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-              <Linkedin />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-primary transition-colors">
-              <Facebook />
-            </a>
+
           </div>
         </div>
 

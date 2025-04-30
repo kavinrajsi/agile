@@ -51,7 +51,7 @@ const ContactSection = () => {
           </div>
           {/* Right: Image */}
           <div className="order-1 md:order-2 flex justify-center items-center">
-            <img src="/assets/hero-banner.jpg" alt="Contact" width={547} height={595} className="shadow-lg object-cover" style={{ width: '547px', height: '595px' }} />
+            <img src="/assets/contact-us-hero.webp" alt="Contact" width={547} height={595} className="shadow-lg object-cover" style={{ width: '547px', height: '595px' }} />
           </div>
         </div>
       </div>

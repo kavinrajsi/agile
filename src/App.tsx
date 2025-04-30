@@ -4,6 +4,9 @@ import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
 import WorkSection from './components/WorkSection';
 import AboutSection from './components/AboutSection';
+import ContactSection from './components/ContactSection';
+import WorkPage from './pages/WorkPage';
+import ServicesPage from './pages/ServiePage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
@@ -28,13 +31,16 @@ function App() {
             <Route path="/" element={
               <>
                 <HeroSection />
-                <ServicesSection />
                 <WorkSection />
+                <ServicesSection />
                 <AboutSection />
+                <ContactSection />
               </>
             } />
-            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/work" element={<WorkPage />} />
+            <Route path="/services" element={<ServicesPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/cookies-policy" element={<CookiesPolicy />} />

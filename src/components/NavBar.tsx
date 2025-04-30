@@ -8,9 +8,9 @@ interface NavBarProps {
 
 const NavBar: React.FC<NavBarProps> = ({ isMobile, setMobileMenuOpen }) => {
   const navItems = [
-    { label: 'HOME', href: '#' },
-    { label: 'WORK', href: '#work' },
-    { label: 'SERVICES', href: '#services' },
+    { label: 'HOME', href: '/' },
+    { label: 'WORK', href: '/work' },
+    { label: 'SERVICES', href: '/services' },
     { label: 'ABOUT US', href: '/about' },
     { label: 'CONTACT', href: '/contact' },
   ];
