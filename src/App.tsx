@@ -13,6 +13,7 @@ import TermsOfService from './pages/TermsOfService';
 import CookiesPolicy from './pages/CookiesPolicy';
 import AboutPage from './pages/AboutPage';
 import Footer from './components/Footer';
+import NotFound from './pages/NotFound';
 import './styles/globals.css';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -44,6 +45,7 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/cookies-policy" element={<CookiesPolicy />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
