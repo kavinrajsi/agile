@@ -58,11 +58,24 @@ const AboutSection = () => {
             <p className="fade-in text-xl text-gray-300 text-center">
               Because in this world, buzz is the prize—and fandom is the fuel.
             </p>
-            
-            <p className="fade-in text-lg text-gray-400 text-center italic">
-              "We've built brands, launched leagues, broken the internet (more than once), and earned the trust of names that move millions."
-            </p>
-            
+
+            {/* Reference-image-inspired quote block */}
+            <div className="fade-in mt-10 mb-6">
+              <p
+                className="text-center text-2xl md:text-4xl font-extrabold italic leading-tight text-gray-200"
+                style={{
+                  lineHeight: '1.2',
+                  fontFamily: 'Caveat, cursive',
+                  fontOpticalSizing: 'auto',
+                }}
+              >
+                We&apos;ve built brands,<br />
+                launched leagues,<br />
+                broken the internet (more than once),<br />
+                and <span className="text-black dark:text-white font-black">earned the trust of names that move millions.</span>
+              </p>
+            </div>
+  
             <p className="fade-in text-lg text-gray-300 text-center">
               We're here for the moments that matter—before they even happen. From grassroots to global screens, we make stories stick and campaigns click.
             </p>

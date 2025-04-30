@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
-import WorkSection from './components/WorkSection';
+// import WorkSection from './components/WorkSection';
 import AboutSection from './components/AboutSection';
 import ContactSection from './components/ContactSection';
-import WorkPage from './pages/WorkPage';
+// import WorkPage from './pages/WorkPage';
 import ServicesPage from './pages/ServiePage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -31,13 +31,13 @@ function App() {
             <Route path="/" element={
               <>
                 <HeroSection />
-                <WorkSection />
+                {/* <WorkSection /> */}
                 <ServicesSection />
                 <AboutSection />
                 <ContactSection />
               </>
             } />
-            <Route path="/work" element={<WorkPage />} />
+            {/* <Route path="/work" element={<WorkPage />} /> */}
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
