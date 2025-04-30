@@ -11,9 +11,7 @@ const NavBar: React.FC<NavBarProps> = ({ isMobile, setMobileMenuOpen }) => {
     { label: 'WORK', href: '#work' },
     { label: 'SERVICES', href: '#services' },
     { label: 'ABOUT US', href: '#about' },
-
-
-    { label: 'CONTACT US', href: '#contact' },
+    { label: 'CONTACT', href: '/contact' },
   ];
 
   const handleClick = () => {

@@ -25,49 +25,33 @@ const ContactSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="contact" className="section bg-tertiary">
+    <section ref={sectionRef} id="contact" className="py-20 bg-black text-white">
       <div className="container-custom">
-        <h2 className="fade-in section-title text-center">
-          <span className="text-primary">CONTACT US</span>
-        </h2>
-
-        <div className="max-w-4xl mx-auto">
-          <p className="fade-in text-xl text-center text-gray-300 mb-10">
-            Let's talk sports, cinema, campaigns—or all three.
-          </p>
-          
-          <div className="fade-in space-y-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">Get in Touch</h3>
-              <p className="text-gray-400">
-                Have a project in mind? Want to collaborate? Or just want to say hello? We'd love to hear from you.
-              </p>
-            </div>
-            
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <Mail className="text-primary mt-1 mr-3" />
-                <div>
-                  <h4 className="font-medium">Email</h4>
-                  <p className="text-gray-400">contact@AgileMadarth.com</p>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          {/* Left: Text Content */}
+          <div className="order-2 md:order-1 flex flex-col justify-center h-full">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Talk</h2>
+            <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl">
+            Let’s talk sports, cinema, campaigns—or all three.
+            </p>
+            <div className="flex flex-col gap-6 mt-2">
+              <div>
+                <div className="text-sm text-gray-400 mb-1">Contact</div>
+                <div className="text-lg md:text-xl font-semibold text-white border-b border-gray-700 pb-1 w-fit">contact@agile.madarth.com</div>
               </div>
-              
-              <div className="flex items-start">
-                <MapPin className="text-primary mt-1 mr-3" />
-                <div>
-                  <h4 className="font-medium">Address</h4>
-                  <p className="text-gray-400">Alamelumangapuram, Mylapore, Chennai</p>
-                </div>
+              <div>
+                <div className="text-sm text-gray-400 mb-1">Address</div>
+                <div className="text-lg md:text-xl text-gray-200">Alamelumangapuram, Mylapore, Chennai</div>
+              </div>
+              <div>
+                <div className="text-sm text-gray-400 mb-1">Social</div>
+                <div className="text-lg md:text-xl text-gray-200">@madarth.agency | @agile.madarth <span className='text-gray-400'>(Coming Soon)</span></div>
               </div>
             </div>
-            
-            <div>
-              <h3 className="text-xl font-bold mb-4">Social</h3>
-              <p className="text-gray-400">
-                @madarth.agency | @AgileMadarth (Coming Soon)
-              </p>
-            </div>
+          </div>
+          {/* Right: Image */}
+          <div className="order-1 md:order-2 flex justify-center items-center">
+            <img src="/assets/hero-banner.jpg" alt="Contact" width={547} height={595} className="shadow-lg object-cover" style={{ width: '547px', height: '595px' }} />
           </div>
         </div>
       </div>

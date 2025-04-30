@@ -4,10 +4,15 @@ import HeroSection from './components/HeroSection';
 import ServicesSection from './components/ServicesSection';
 import WorkSection from './components/WorkSection';
 import AboutSection from './components/AboutSection';
-import CareersSection from './components/CareersSection';
-import ContactSection from './components/ContactSection';
+import ContactPage from './pages/ContactPage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import CookiesPolicy from './pages/CookiesPolicy';
+import AboutPage from './pages/AboutPage';
 import Footer from './components/Footer';
 import './styles/globals.css';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   useEffect(() => {
@@ -15,18 +20,29 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Header />
-      <main>
-        <HeroSection />
-        <ServicesSection />
-        <WorkSection />
-        <AboutSection />
-
-        <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen bg-black text-white">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <HeroSection />
+                <ServicesSection />
+                <WorkSection />
+                <AboutSection />
+              </>
+            } />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/cookies-policy" element={<CookiesPolicy />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

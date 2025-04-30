@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import NavBar from './NavBar';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +15,18 @@ const Header = () => {
       } else {
         setIsScrolled(false);
       }
+      // Show header only when scrolling up
+      if (window.scrollY < 10) {
+        setShowHeader(true);
+        lastScrollY.current = window.scrollY;
+        return;
+      }
+      if (window.scrollY < lastScrollY.current) {
+        setShowHeader(true);
+      } else if (window.scrollY > lastScrollY.current) {
+        setShowHeader(false);
+      }
+      lastScrollY.current = window.scrollY;
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -24,9 +38,9 @@ const Header = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${
         isScrolled ? 'bg-black/90 shadow-md backdrop-blur-sm py-3' : 'bg-transparent py-5'
-      }`}
+      } ${showHeader ? 'translate-y-0' : '-translate-y-full'}`}
     >
       <div className="container-custom flex items-center justify-between">
         <a href="#" className="text-2xl font-bold text-white">
