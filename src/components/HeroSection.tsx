@@ -29,9 +29,30 @@ const HeroSection = () => {
     <section 
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ paddingTop: '80px' }}
+      style={{ paddingTop: '80px', fontFamily: "'Anek Tamil', sans-serif" }}
     >
+      <picture>
+        <source srcSet="/assets/hero-banner.webp" type="image/webp" />
+        <source srcSet="/assets/hero-banner.jpg" type="image/jpeg" />
+        <img
+          src="/assets/hero-banner.png"
+          alt="Hero background"
+          className="hero-background"
+        />
+      </picture>
 
+      <div 
+        className="hero-overlay" 
+        style={{ 
+          position: 'absolute', 
+          top: 0, 
+          left: 0, 
+          width: '100%', 
+          height: '100%', 
+          backgroundColor: 'rgba(0,0,0,0.2)', 
+          zIndex: 1 
+        }} 
+      />
 
       <div className="overlay"></div>
 

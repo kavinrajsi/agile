@@ -7,15 +7,43 @@ interface ServiceCardProps {
   icon: React.ReactNode;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon }) => {
-  return (
-    <div className="service-card">
-      <div className="mb-6 text-primary">{icon}</div>
-      <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-gray-400">{description}</p>
+import { ArrowRightCircle } from 'lucide-react';
+
+const ServiceRow: React.FC<{
+  title: string;
+  description: string;
+  floatingImage?: boolean;
+}> = ({ title, description, floatingImage }) => (
+  <div
+    className={"group flex flex-col md:flex-row items-center md:items-stretch px-4 md:px-8 py-6 md:py-8 border-b last:border-0 relative transition-colors hover:bg-gray-100/60 cursor-pointer"}
+    style={{ minHeight: '80px' }}
+  >
+    <div className="w-full md:w-1/4 flex-shrink-0 flex items-center justify-start text-lg md:text-xl font-semibold text-gray-800 mb-2 md:mb-0">
+      {title}
     </div>
-  );
-};
+    <div className="w-full md:w-3/4 text-gray-500 text-base flex items-center relative">
+      {description}
+      {floatingImage && (
+        <img
+          src={`/assets/${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '')}.jpg`}
+          alt={title}
+          className="hidden md:block absolute -top-8 right-24 w-40 rounded-lg rotate-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          style={{ pointerEvents: 'none' }}
+        />
+      )}
+      <span className="ml-2 text-2xl text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 select-none">→</span>
+    </div>
+    {floatingImage && (
+      <img
+        src={`/assets/${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '')}.jpg`}
+        alt={title}
+        className="block md:hidden absolute -top-16 right-2 w-32 rounded-lg rotate-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        style={{ pointerEvents: 'none' }}
+      />
+    )}
+  </div>
+);
+
 
 const ServicesSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -68,25 +96,22 @@ const ServicesSection = () => {
     }
   ];
 
+
   return (
-    <section ref={sectionRef} id="services" className="section bg-tertiary">
-      <div className="container-custom">
-        <h2 className="fade-in section-title text-center">
-          <span className="text-primary">SERVICES</span>
+    <section ref={sectionRef} id="services" className="py-16 bg-white">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center">
+          Our Services
         </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="fade-in" style={{ transitionDelay: `${150 * index}ms` }}>
-              <ServiceCard {...service} />
-            </div>
+        <div>
+          {services.map((service) => (
+            <ServiceRow
+              key={service.title}
+              title={service.title}
+              description={service.description}
+              floatingImage={true}
+            />
           ))}
-        </div>
-
-        <div className="mt-12 text-center fade-in">
-          <a href="#work" className="btn btn-primary">
-            Here's how we do it!
-          </a>
         </div>
       </div>
     </section>

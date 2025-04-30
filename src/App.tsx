@@ -11,7 +11,7 @@ import './styles/globals.css';
 
 function App() {
   useEffect(() => {
-    document.title = "Agile.Madarth | Sports & Entertainment Marketing";
+    document.title = "AgileMadarth | Sports & Entertainment Marketing";
   }, []);
 
   return (
@@ -22,7 +22,7 @@ function App() {
         <ServicesSection />
         <WorkSection />
         <AboutSection />
-        <CareersSection />
+
         <ContactSection />
       </main>
       <Footer />

@@ -33,7 +33,7 @@ const AboutSection = () => {
 
           <div className="space-y-6">
             <p className="fade-in text-xl md:text-2xl text-center text-gray-300">
-              <span className="font-bold">At Agile.Madarth, we understand the tempo of sports and entertainment—because we live it.</span>
+              <span className="font-bold">At AgileMadarth, we understand the tempo of sports and entertainment—because we live it.</span>
             </p>
             
             <p className="fade-in text-lg md:text-xl text-gray-400 text-center">
