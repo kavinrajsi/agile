@@ -1,4 +1,5 @@
 import React from 'react';
+import '../NavBarItemPadding.css';
 
 interface NavBarProps {
   isMobile?: boolean;
@@ -10,7 +11,7 @@ const NavBar: React.FC<NavBarProps> = ({ isMobile, setMobileMenuOpen }) => {
     { label: 'HOME', href: '#' },
     { label: 'WORK', href: '#work' },
     { label: 'SERVICES', href: '#services' },
-    { label: 'ABOUT US', href: '#about' },
+    { label: 'ABOUT US', href: '/about' },
     { label: 'CONTACT', href: '/contact' },
   ];
 

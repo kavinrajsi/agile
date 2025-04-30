@@ -34,13 +34,13 @@ const Footer = () => {
           </p>
 
           <div className="flex flex-wrap justify-center gap-6">
-            <a href="/privacy-policy" className="text-gray-500 hover:text-primary transition-colors">
+            <a href="/privacy-policy" className="text-gray-500 hover:text-primary transition-colors footer-menu-link">
               Privacy Policy
             </a>
-            <a href="/terms-of-service" className="text-gray-500 hover:text-primary transition-colors">
+            <a href="/terms-of-service" className="text-gray-500 hover:text-primary transition-colors footer-menu-link">
               Terms of Service
             </a>
-            <a href="/cookies-policy" className="text-gray-500 hover:text-primary transition-colors">
+            <a href="/cookies-policy" className="text-gray-500 hover:text-primary transition-colors footer-menu-link">
               Cookies
             </a>
           </div>

@@ -24,21 +24,19 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="section bg-tertiary">
+    <section ref={sectionRef} id="about" className="section">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto">
-          <h2 className="fade-in section-title text-center">
-            <span className="text-primary">ABOUT US</span>
-          </h2>
 
           <div className="space-y-6">
-            <p className="fade-in text-xl md:text-2xl text-center text-gray-300">
-              <span className="font-bold">At AgileMadarth, we understand the tempo of sports and entertainment—because we live it.</span>
-            </p>
-            
-            <p className="fade-in text-lg md:text-xl text-gray-400 text-center">
-              Whether it's the roar of a stadium, the build-up to a trailer drop, or the scroll-stopping meme that reflects a fan's true feeling—we know where emotion meets momentum.
-            </p>
+            <div className="fade-in mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mb-2 text-left">
+                At AgileMadarth, we understand the tempo of sports and entertainment—because we live it.
+              </h2>
+              <p className="text-lg md:text-xl text-gray-400 text-left">
+                Whether it's the roar of a stadium, the build-up to a trailer drop, or the scroll-stopping meme that reflects a fan's true feeling—we know where emotion meets momentum.
+              </p>
+            </div>
             
             <div className="fade-in grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
               <div className="text-center">

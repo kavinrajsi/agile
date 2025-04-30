@@ -30,8 +30,8 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left: Text Content */}
           <div className="order-2 md:order-1 flex flex-col justify-center h-full">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Talk</h2>
-            <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-left">Let's Talk</h2>
+            <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl text-left">
             Let’s talk sports, cinema, campaigns—or all three.
             </p>
             <div className="flex flex-col gap-6 mt-2">
