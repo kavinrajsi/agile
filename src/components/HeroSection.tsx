@@ -31,15 +31,7 @@ const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{ paddingTop: '80px' }}
     >
-      <iframe
-        className="video-background"
-        src="https://www.youtube.com/embed/A1L763T6hMM?autoplay=1&mute=1&loop=1&playlist=A1L763T6hMM&controls=0&showinfo=0&modestbranding=1&rel=0"
-        title="YouTube video background"
-        frameBorder="0"
-        allow="autoplay; fullscreen"
-        allowFullScreen
-        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 1 }}
-      ></iframe>
+
 
       <div className="overlay"></div>
 
