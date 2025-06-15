@@ -41,6 +41,12 @@ const workItems: WorkItem[] = [
     videoUrl: "/assets/aha/744792670-aha-thumbnail-v2.mp4",
     videoCoverUrl: "/assets/aha/744792670-aha-thumbnail-v2.mp4",
   },
+  {
+    url: "star-sports",
+    title: "Star Sports",
+    videoUrl: "/assets/star-sports/746765017-star-sports-cover-image.mp4",
+    videoCoverUrl: "/assets/star-sports/746765017-star-sports-cover-image.mp4",
+  },
 ];
 
 // const WorkIndex = () => {

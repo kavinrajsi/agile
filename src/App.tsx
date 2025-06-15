@@ -8,6 +8,11 @@ import ContactSection from './components/ContactSection';
 // import WorkPage from './pages/WorkPage';
 import WorkIndex from './pages/WorkIndex';
 import ChennaiSuperKings from "./work/ChennaiSuperKings";
+import JoburgSuperKings from "./work/JoburgSuperKings";
+import TexasSuperKings from "./work/TexasSuperKings";
+import SuperKingsAcademy from "./work/SuperKingsAcademy";
+import Aha from "./work/Aha";
+import StarSports from "./work/StarSports";
 import ServicesPage from './pages/ServiePage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -42,7 +47,12 @@ function App() {
             } />
             {/* <Route path="/work" element={<WorkPage />} /> */}
             <Route path="/work" element={<WorkIndex />} />
-            <Route path="/work/chennai-super-kings" element={<ChennaiSuperKings />} /> {/* Updated route */}
+            <Route path="/work/chennai-super-kings" element={<ChennaiSuperKings />} />
+            <Route path="/work/joburg-super-kings" element={<JoburgSuperKings />} />
+            <Route path="/work/texas-super-kings" element={<TexasSuperKings />} />
+            <Route path="/work/super-kings-academy" element={<SuperKingsAcademy />} />
+            <Route path="/work/aha" element={<Aha />} />
+            <Route path="/work/star-sports" element={<StarSports />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
