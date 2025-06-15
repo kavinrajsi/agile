@@ -1,25 +1,48 @@
 import { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom'; // Assuming you are using react-router for navigation
 
 interface WorkCardProps {
+  url: string;
   title: string;
-  description: string;
-  stat: string;
-  imageUrl: string;
+  description?: string;
+  stat?: string;
+  imageUrl?: string;
+  videoUrl: string;
+  videoCoverUrl: string;
 }
 
-const WorkCard: React.FC<WorkCardProps> = ({ title, description, stat, imageUrl }) => {
+const WorkCard: React.FC<WorkCardProps> = ({
+  title,
+  description,
+  stat,
+  imageUrl,
+  videoUrl,
+  videoCoverUrl,
+}) => {
   return (
     <div className="work-card aspect-video">
-      <img 
-        src={imageUrl} 
-        alt={title} 
-        className="w-full h-full object-cover"
-      />
-      <div className="work-card-content">
+      {imageUrl ? (
+        <img
+          src={imageUrl}
+          alt={title}
+          className="w-full h-full object-cover rounded-lg"
+        />
+      ) : (
+        <video
+          className="w-full h-full object-cover rounded-lg"
+          src={videoCoverUrl}
+          poster={videoCoverUrl} // Show a poster image until video is played
+          muted
+          loop
+          playsInline
+          autoPlay
+        />
+      )}
+      <div className="work-card-content mt-4">
         <h3 className="text-xl md:text-2xl font-bold mb-2">{title}</h3>
-        <div className="text-primary text-lg md:text-xl font-bold mb-2">{stat}</div>
-        <p className="text-gray-300 mb-4">{description}</p>
+        {stat && <div className="text-primary text-lg md:text-xl font-bold mb-2">{stat}</div>}
+        {description && <p className="text-gray-300 mb-4">{description}</p>}
       </div>
     </div>
   );
@@ -50,60 +73,89 @@ const WorkSection = () => {
 
   const workItems = [
     {
-      title: "Chennai Super Kings",
-      stat: "6M → 16M Instagram growth",
-      description: "From fandom to frenzy across seasons with an omni-channel approach",
-      imageUrl: "https://images.pexels.com/photos/3952072/pexels-photo-3952072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      url: 'chennai-super-kings',
+      title: 'Chennai Super Kings',
+      videoUrl: '/assets/chennai/744790214-6m-16m-hero-image.mp4',
+      videoCoverUrl: '/assets/chennai/744790214-6m-16m-hero-image.mp4',
     },
     {
-      title: "Joburg Super Kings",
-      stat: "Global fandom, local love",
-      description: "Taking the Super Kings brand of cricket to South Africa",
-      imageUrl: "https://images.pexels.com/photos/3657154/pexels-photo-3657154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      url: 'joburg-super-kings',
+      title: 'Joburg Super Kings',
+      videoUrl: '/assets/joburg/744790498-jsk-hero-image.mp4',
+      videoCoverUrl: '/assets/joburg/744790498-jsk-hero-image.mp4',
     },
     {
-      title: "Texas Super Kings",
-      stat: "Global fandom, local love",
-      description: "Introduced the Super Kings' way of Cricket to the cowboys in Texas!",
-      imageUrl: "https://images.pexels.com/photos/2433467/pexels-photo-2433467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      url: 'texas-super-kings',
+      title: 'Texas Super Kings',
+      videoUrl: '/assets/texas/744791096-tsk-cover-image.mp4',
+      videoCoverUrl: '/assets/texas/744791096-tsk-cover-image.mp4',
     },
     {
-      title: "Tamil Nadu Premier League",
-      stat: "1 Billion+ Reach",
-      description: "Took the Namma Ooru Gethu to a whole new level for the local league!",
-      imageUrl: "https://images.pexels.com/photos/976873/pexels-photo-976873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      url: 'super-kings-academy',
+      title: 'Super Kings Academy',
+      imageUrl: '/assets/academy/744791519-hero-img.png',
+      videoUrl: '',
+      videoCoverUrl: '',
     },
     {
-      title: "AHA Tamil OTT",
-      stat: "New platform launch",
-      description: "Launched the Tamil App with the campaign \"Thattuna Thamizh Mattume!\"",
-      imageUrl: "https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      url: 'aha',
+      title: 'AHA',
+      videoUrl: '/assets/aha/744792670-aha-thumbnail-v2.mp4',
+      videoCoverUrl: '/assets/aha/744792670-aha-thumbnail-v2.mp4',
     },
-    {
-      title: "Star Sports Regional",
-      stat: "Multi-language strategy",
-      description: "Curated and crafted south Indian sport stories across Tamil, Telugu & Kannada",
-      imageUrl: "https://images.pexels.com/photos/3945832/pexels-photo-3945832.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    }
   ];
 
   return (
     <section ref={sectionRef} id="work" className="section bg-black">
       <div className="container-custom">
-        <h2 className="fade-in section-title text-center">
-          <span className="text-primary">WORK</span>
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-2 gap-6">
           {workItems.map((work, index) => (
-            <div key={index} className="fade-in" style={{ transitionDelay: `${150 * index}ms` }}>
-              <WorkCard {...work} />
+            <div
+              key={work.url}
+              className={`col-span-1 ${index % 3 === 2 ? 'lg:col-span-2' : ''}`}
+            >
+              <Link
+                to={`/work/${work.url}`}
+                className="inline-block text-2xl font-semibold"
+              >
+                {work.videoUrl ? (
+                  <div className="mt-4 relative">
+                    <video
+                      width="100%"
+                      autoPlay
+                      muted
+                      loop
+                      className="rounded-lg mt-4"
+                      controls={false}
+                      disablePictureInPicture
+                      preload="auto"
+                      poster={work.videoCoverUrl ? work.videoCoverUrl : undefined}
+                    >
+                      <source src={work.videoUrl} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                ) : work.imageUrl ? (
+                  <div className="mt-4">
+                    <img
+                      src={work.imageUrl}
+                      alt={work.title}
+                      className="w-full h-auto object-cover rounded-lg"
+                    />
+                  </div>
+                ) : (
+                  <div className="mt-4">
+                    <p>No video or image available.</p>
+                  </div>
+                )}
+                <h2 className="text-2xl font-semibold mt-4"> {work.title}</h2>
+              </Link>
             </div>
           ))}
         </div>
 
         <div className="mt-12 text-center fade-in">
-          <a href="#about" className="btn btn-primary group">
+          <a href="/work" className="btn btn-primary group">
             Explore More
             <ArrowRight className="ml-2 inline-block transition-transform group-hover:translate-x-1" />
           </a>
